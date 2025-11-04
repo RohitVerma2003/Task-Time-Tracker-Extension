@@ -1,0 +1,100 @@
+* {
+  font-family: 'Sour Gummy', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+body {
+  width: max-content;
+}
+
+.groups {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#taskInput {
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  outline: none;
+  font-weight: bold;
+}
+
+#addTaskBtn {
+  background: rgb(0, 183, 255);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.task-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.task-time {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.task-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.start-btn {
+  background-color: rgb(0, 183, 255);
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.pause-btn {
+  background-color: rgb(255, 115, 0);
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+
+::-webkit-scrollbar{
+  display: none;
+}
