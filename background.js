@@ -33,6 +33,13 @@ class Task {
       this.time = this.baseTime + elapsed;
     }
   }
+
+  reset() {
+    this.time = 0;
+    this.baseTime = 0;
+    this.isRunning = false;
+    this.startTime = null;
+  }
 }
 
 class TaskManager {
@@ -110,6 +117,15 @@ class TaskManager {
     }
   }
 
+  resetTask(id) {
+    const task = this.tasks.find((t) => t.id === id);
+    if (task) {
+      task.reset();
+      this.saveTasks();
+      this.updateBadge();
+    }
+  }
+
   deleteTask(id) {
     this.tasks = this.tasks.filter((t) => t.id !== id);
     this.saveTasks();
@@ -162,6 +178,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         break;
       case 'getTasks':
         sendResponse({ tasks: manager.getTasksWithUpdatedTimes() });
+        break;
+      case 'resetTimer':
+        manager.resetTask(request.taskId);
+        sendResponse({ success: true });
         break;
     }
   });

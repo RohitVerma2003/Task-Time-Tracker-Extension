@@ -57,8 +57,17 @@ function renderTasks(tasks) {
       }
     });
 
+    //Reset Button
+    const resetButton = document.createElement('button');
+    resetButton.textContent = '⟳ Reset';
+    resetButton.className = 'reset-btn';
+    resetButton.addEventListener('click', () => {
+      resetTimer(task.id);
+    })
+
     btnGroup.appendChild(startBtn);
     btnGroup.appendChild(deleteBtn);
+    btnGroup.appendChild(resetButton);
 
     taskDiv.appendChild(name);
     taskDiv.appendChild(time);
@@ -79,6 +88,12 @@ function pauseTimer(taskId) {
   chrome.runtime.sendMessage({ action: 'pauseTimer', taskId }, (response) => {
     if (response?.success) refreshTasks();
   });
+}
+
+function resetTimer(taskId) {
+  chrome.runtime.sendMessage({ action: 'resetTimer', taskId }, (response) => {
+    if (response?.success) refreshTasks();
+  })
 }
 
 // Add a new task

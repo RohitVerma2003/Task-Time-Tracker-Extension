@@ -84,6 +84,16 @@ body {
   cursor: pointer;
 }
 
+.reset-btn{
+  background-color: rgb(0, 183, 255);
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
 .delete-btn{
   background-color: red;
   color: white;
