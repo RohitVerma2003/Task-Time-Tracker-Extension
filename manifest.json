@@ -12,5 +12,11 @@
   "permissions": [
     "storage",
     "alarms"
-  ]
+  ],
+  "icons": {
+    "16": "./TT16.png",
+    "32": "./TT32.png",
+    "48": "./TT48.png",
+    "128": "./TT128.png"
+  }
 }
