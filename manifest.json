@@ -14,9 +14,9 @@
     "alarms"
   ],
   "icons": {
-    "16": ".icons/TT16.png",
-    "32": ".icons/TT32.png",
-    "48": ".icons/TT48.png",
-    "128": ".icons/TT128.png"
+    "16": "./icons/TT16.png",
+    "32": "./icons/TT32.png",
+    "48": "./icons/TT48.png",
+    "128": "./icons/TT128.png"
   }
 }
