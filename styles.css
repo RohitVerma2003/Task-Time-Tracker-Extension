@@ -4,10 +4,12 @@
   font-weight: 200;
   font-style: normal;
   font-variation-settings: 'wdth' 100;
+  color: white;
 }
 
 body {
   width: max-content;
+  background-color: #0f0f0f;
 }
 
 .groups {
@@ -23,6 +25,7 @@ body {
   border-radius: 5px;
   outline: none;
   font-weight: bold;
+  background-color: #262626;
 }
 
 #addTaskBtn {
@@ -44,6 +47,7 @@ body {
   border: 1px solid gray;
   padding: 10px;
   border-radius: 5px;
+  background-color: #262626;
 }
 
 .task-name {
