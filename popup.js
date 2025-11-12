@@ -76,6 +76,11 @@ function renderTasks(tasks) {
   });
 }
 
+function updateTotalTime(time){
+  const totalTimeBox = document.getElementById("totalTime");
+  totalTimeBox.innerText = `Total Focus: ${formatTime(time)}`;
+}
+
 // Start a timer
 function startTimer(taskId) {
   chrome.runtime.sendMessage({ action: 'startTimer', taskId }, (response) => {
@@ -119,6 +124,9 @@ function refreshTasks() {
   });
 
   chrome.runtime.sendMessage({ action: 'updateBadge' });
+  chrome.runtime.sendMessage({ action: 'getTotalTime' } , (response)=>{
+    if(response?.success) updateTotalTime(response.totalTime);
+  });
 }
 
 // -----------------------------

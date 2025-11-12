@@ -108,6 +108,15 @@ body {
   cursor: pointer;
 }
 
+#totalTime{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 5px;
+  background-color: #262626;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
 
 ::-webkit-scrollbar{
   display: none;

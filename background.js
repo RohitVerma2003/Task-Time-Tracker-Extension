@@ -45,6 +45,7 @@ class Task {
 class TaskManager {
   constructor() {
     this.tasks = [];
+    this.totalTime = 0;
   }
 
   async loadTasks() {
@@ -77,11 +78,14 @@ class TaskManager {
   }
 
   updateAllTimers() {
+    this.totalTime = 0;
     let hasRunning = false;
     this.tasks.forEach((task) => {
       task.updateTime();
+      this.totalTime += task.time;
       if (task.isRunning) hasRunning = true;
     });
+    console.log(this.totalTime);
 
     if (hasRunning) {
       this.saveTasks();
@@ -183,6 +187,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         manager.resetTask(request.taskId);
         sendResponse({ success: true });
         break;
+      case 'getTotalTime':
+        sendResponse({success: true, totalTime: manager.totalTime});
     }
   });
   return true;
