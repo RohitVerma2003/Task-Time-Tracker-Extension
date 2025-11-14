@@ -85,7 +85,6 @@ class TaskManager {
       this.totalTime += task.time;
       if (task.isRunning) hasRunning = true;
     });
-    console.log(this.totalTime);
 
     if (hasRunning) {
       this.saveTasks();
